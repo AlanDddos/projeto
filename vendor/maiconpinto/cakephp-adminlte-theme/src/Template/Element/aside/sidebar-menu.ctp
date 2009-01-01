@@ -21,6 +21,7 @@ if (file_exists($file)) {
             <li><a href="<?php echo $this->Url->build('/pedidos/index'); ?>"><i class="fa fa-circle-o"></i>Pedidos</a></li>
             <li><a href="<?php echo $this->Url->build('/clientes/index'); ?>"><i class="fa fa-circle-o"></i>Clientes</a></li>
             <li><a href="<?php echo $this->Url->build('/produtos/index'); ?>"><i class="fa fa-circle-o"></i>Produtos</a></li>
+            <li><a href="<?php echo $this->Url->build('auth/users/index'); ?>"><i class="fa fa-circle-o"></i>Usuarios</a></li>
         </ul>
     </li>
 </ul>

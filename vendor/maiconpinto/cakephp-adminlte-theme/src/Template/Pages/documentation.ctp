@@ -480,7 +480,7 @@ AdminLTE/
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="#" class="btn btn-default btn-flat">aasadsd out</a>
                     </div>
                   </li>
                 </ul>

@@ -1,13 +1,18 @@
 <?php
+
 use Cake\Core\Configure;
 
 $file = Configure::read('Theme.folder') . DS . 'src' . DS . 'Template' . DS . 'Element' . DS . 'nav-top.ctp';
+$sessao = $_SESSION["Auth"];
+$sessaoArray = $sessao['User'];
 
 if (file_exists($file)) {
     ob_start();
     include_once $file;
     echo ob_get_clean();
 } else {
+
+
 ?>
 <nav class="navbar navbar-static-top">
   <!-- Sidebar toggle button-->
@@ -214,7 +219,10 @@ if (file_exists($file)) {
       <li class="dropdown user user-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           <?php echo $this->Html->image('user2-160x160.jpg', array('class' => 'user-image', 'alt' => 'User Image')); ?>
-          <span class="hidden-xs">Alexander Pierce</span>
+          <span class="hidden-xs">
+            <?php
+            echo $sessaoArray['email'];
+            ?></span>
         </a>
         <ul class="dropdown-menu">
           <!-- User image -->
@@ -222,7 +230,10 @@ if (file_exists($file)) {
             <?php echo $this->Html->image('user2-160x160.jpg', array('class' => 'img-circle', 'alt' => 'User Image')); ?>
 
             <p>
-              Alexander Pierce - Web Developer
+            <?php
+            echo $sessaoArray['email'];
+            ?>
+
               <small>Member since Nov. 2012</small>
             </p>
           </li>
@@ -247,7 +258,7 @@ if (file_exists($file)) {
               <a href="#" class="btn btn-default btn-flat">Profile</a>
             </div>
             <div class="pull-right">
-              <a href="#" class="btn btn-default btn-flat">Sign out</a>
+              <a href="/auth/users/logout" class="btn btn-default btn-flat">Desconectar</a>
             </div>
           </li>
         </ul>
