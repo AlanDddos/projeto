@@ -117,8 +117,6 @@ class PedidosController extends AppController
 
                 $pedido['total'] = $pedido['total'] + $pedido->itens_pedidos[0]['totali']; //tenho que somar os itens do pedido para salvar no pedido
 
-            //debug($pedido);
-           // exit();
             if ($this->Pedidos->save($pedido)) {
                 $this->Flash->success(__('O pedido foi salvo.'));
 
