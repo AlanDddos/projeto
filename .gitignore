@@ -4,7 +4,6 @@
 /config/.env
 /logs/*
 /tmp/*
-/vendor/*
 .editorconfig
 .gitattributes
 .github/
