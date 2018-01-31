@@ -13,7 +13,7 @@ if (file_exists($file)) {
     <div class="pull-right hidden-xs">
         <b>Version</b> 2.3.11
     </div>
-    <strong>Copyright &copy; 2014-2017 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2017 <a href="#">Agil Sistemas</a>.</strong> All rights
     reserved.
 </footer>
 <?php } ?>

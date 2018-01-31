@@ -4,7 +4,9 @@
  * @var \App\Model\Entity\Pedido[]|\Cake\Collection\CollectionInterface $pedidos
  */
 ?>
-<?= $this->Html->link(__('Adicionar Pedido'), ['action' => 'add'],['class' => 'btn btn-primary']) ?>
+<button type="button" class="btn btn-default btn-lg" onclick="location.href='/pedidos/add'">
+    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Adicionar Pedido
+</button>
 <div class="box">
 <div class="pedidos index large-9 medium-8 columns content">
     <h3><?= __('Pedidos') ?></h3>
@@ -26,9 +28,9 @@
                 <td><?= h($pedido->data) ?></td>
                 <td><?= $this->Number->format($pedido->total) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $pedido->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $pedido->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $pedido->id], ['confirm' => __('Are you sure you want to delete # {0}?', $pedido->id)]) ?>
+                    <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $pedido->id],['class'=>"label label-warning"]) ?>
+                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $pedido->id],['class'=>"label label-primary"]) ?>
+                    <?= $this->Form->postLink(__('Excluir'), ['action' => 'delete', $pedido->id],['class'=>"label label-danger"], ['confirm' => __('Are you sure you want to delete # {0}?', $pedido->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
