@@ -36,7 +36,7 @@
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="<?php echo $this->Url->build('/'); ?>" class="navbar-brand"><b>Admin</b>LTE</a>
+          <a href="<?php echo $this->Url->build('/'); ?>" class="navbar-brand"><b>Agil</b>Sistemas</a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>

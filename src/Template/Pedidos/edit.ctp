@@ -4,14 +4,33 @@
  * @var \App\Model\Entity\Pedido $pedido
  */
 ?>
-<?= $this->Html->link(__('Novo Pedido'), ['action' => 'add'],['class' => 'btn btn-primary']) ?>
-<?= $this->Html->link(__('Listar Pedidos'), ['action' => 'index'],['class' => 'btn btn-primary']) ?>
+
 <div class="box">
 <div class="pedidos form large-9 medium-8 columns content">
 
     <?= $this->Form->create($pedido,['class'=>'form']) ?>
     <fieldset>
-        <legend><?= __('Pedido em edição') ?></legend>
+        <legend><?= __('Pedido em edição') ?><nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <a href="<?php echo $this->Url->build('/'); ?>" class="navbar-brand"><b>Agil</b>Sistemas</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <button type="button" class="btn btn-default btn-lg" onclick="location.href='/pedidos/add'">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Adicionar Novo Pedido
+                </button>
+                <button type="button" class="btn btn-default btn-lg" onclick="location.href='/pedidos/index'">
+                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Listar Pedidos
+                </button>
+                <button type="button" class="btn btn-default btn-lg" onclick="location.href='/clientes/add'">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Adicionar Cliente
+                </button>
+                <button type="button" class="btn btn-default btn-lg" onclick="location.href='/produtos/add'">
+                    <span class="glyphicon glyphicon-barcode" aria-hidden="true"></span> Adicionar Produtos
+                </button>
+
+            </nav></legend>
         <div class="row">
             <div class="form-inline">
             <div class="text-right">
