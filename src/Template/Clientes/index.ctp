@@ -4,7 +4,9 @@
  * @var \App\Model\Entity\Cliente[]|\Cake\Collection\CollectionInterface $clientes
  */
 ?>
-<?= $this->Html->link(__('Adicionar Cliente'), ['action' => 'add'],['class' => 'btn btn-primary']) ?>
+<button type="button" class="btn btn-default btn-lg" onclick="location.href='/clientes/add'">
+    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Adicionar Cliente
+</button>
 <div class="box">
 
 <div class="clientes index large-9 medium-8 columns content">

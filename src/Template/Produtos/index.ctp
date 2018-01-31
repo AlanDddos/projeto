@@ -4,7 +4,9 @@
  * @var \App\Model\Entity\Produto[]|\Cake\Collection\CollectionInterface $produtos
  */
 ?>
-<?= $this->Html->link(__('Adcionar Produto'), ['action' => 'add'],['class' => 'btn btn-primary']) ?>
+<button type="button" class="btn btn-default btn-lg" onclick="location.href='/produtos/add'">
+    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Adicionar Produtos
+</button>
 <div class="box">
 <div class="produtos index large-9 medium-8 columns content">
     <h3><?= __('Produtos') ?></h3>
