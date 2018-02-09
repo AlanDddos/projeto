@@ -35,7 +35,7 @@
             <div class="form-inline">
             <div class="text-right">
                 <div class="col-xs-12 col-md-12">
-                    <?php echo $this->Form->control('data', ['class'=>"form-control"]);?>
+                    <?php echo $this->Form->control('data', ['class'=>"input-group-addon"]);?>
 
                     </div>
             </div>
