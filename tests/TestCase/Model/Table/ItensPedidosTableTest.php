@@ -26,7 +26,8 @@ class ItensPedidosTableTest extends TestCase
     public $fixtures = [
         'app.itens_pedidos',
         'app.pedidos',
-        'app.produtos'
+        'app.produtos',
+        'app.clientes'
     ];
 
     /**
@@ -39,6 +40,7 @@ class ItensPedidosTableTest extends TestCase
         parent::setUp();
         $config = TableRegistry::exists('ItensPedidos') ? [] : ['className' => ItensPedidosTable::class];
         $this->ItensPedidos = TableRegistry::get('ItensPedidos', $config);
+
     }
 
     /**

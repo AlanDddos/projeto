@@ -37,7 +37,9 @@ class ProdutosTable extends Table
         $this->setPrimaryKey('id');
 
         $this->hasMany('ItensPedidos', [
-            'foreignKey' => 'produto_id'
+            'foreignKey' => 'produto_id',
+            'update'=>'CASCADE',
+            'delete'=>'CASCADE'
         ]);
     }
 

@@ -37,7 +37,9 @@ class ClientesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->hasMany('Pedidos', [
-            'foreignKey' => 'cliente_id'
+            'foreignKey' => 'cliente_id',
+            'update'=>'CASCADE',
+            'delete'=>'CASCADE'
         ]);
     }
 

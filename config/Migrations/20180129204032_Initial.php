@@ -1,4 +1,5 @@
 <?php
+
 use Migrations\AbstractMigration;
 
 class Initial extends AbstractMigration
@@ -215,8 +216,8 @@ class Initial extends AbstractMigration
                 'pedidos',
                 'id',
                 [
-                    'update' => 'NO_ACTION',
-                    'delete' => 'NO_ACTION'
+                    'update' => 'CASCADE',
+                    'delete' => 'CASCADE'
                 ]
             )
             ->addForeignKey(
@@ -224,8 +225,8 @@ class Initial extends AbstractMigration
                 'produtos',
                 'id',
                 [
-                    'update' => 'NO_ACTION',
-                    'delete' => 'NO_ACTION'
+                    'update' => 'CASCADE',
+                    'delete' => 'CASCADE'
                 ]
             )
             ->update();
@@ -236,8 +237,8 @@ class Initial extends AbstractMigration
                 'clientes',
                 'id',
                 [
-                    'update' => 'NO_ACTION',
-                    'delete' => 'NO_ACTION'
+                    'update' => 'CASCADE',
+                    'delete' => 'CASCADE'
                 ]
             )
             ->update();

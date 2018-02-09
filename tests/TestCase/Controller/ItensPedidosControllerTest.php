@@ -18,7 +18,8 @@ class ItensPedidosControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.itens_pedidos',
         'app.pedidos',
-        'app.produtos'
+        'app.produtos',
+        'app.clientes'
     ];
 
     /**

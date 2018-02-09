@@ -23,7 +23,7 @@ class PedidosFixture extends TestFixture
         'total' => ['type' => 'float', 'length' => null, 'default' => null, 'null' => true, 'comment' => null, 'precision' => null, 'unsigned' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'pedidos_fk0' => ['type' => 'foreign', 'columns' => ['cliente_id'], 'references' => ['clientes', 'id'], 'update' => 'noAction', 'delete' => 'noAction', 'length' => []],
+            'pedidos_fk0' => ['type' => 'foreign', 'columns' => ['cliente_id'], 'references' => ['clientes', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
         ],
     ];
     // @codingStandardsIgnoreEnd
@@ -35,7 +35,7 @@ class PedidosFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => 1,
+            'id' => 1000,
             'cliente_id' => 1,
             'data' => 1517234518,
             'total' => 1

@@ -12,6 +12,7 @@
  * @since         1.2.0
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Test\TestCase\Controller;
 
 use App\Controller\PagesController;
@@ -49,7 +50,7 @@ class PagesControllerTest extends IntegrationTestCase
     {
         $this->get('/pages/home');
         $this->assertResponseOk();
-        $this->assertResponseContains('CakePHP');
+        $this->assertResponseContains('AdminLTE');
         $this->assertResponseContains('<html>');
     }
 
