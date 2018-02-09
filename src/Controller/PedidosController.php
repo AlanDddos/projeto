@@ -47,6 +47,7 @@ class PedidosController extends AppController
     /**
      * Add method
      *
+     * @param string|null $id Pedido id.
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
     public function add($id = null)

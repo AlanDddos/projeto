@@ -9,7 +9,7 @@
 
     <?= $this->Form->create($pedido,['class'=>'form']) ?>
     <fieldset>
-        <legend><?= __('Pedido '.$pedido->id.' em edição') ?><nav class="navbar navbar-default">
+        <legend><?= __('Pedido '.$pedido->id.' em edição') ?><nav class="navbar navbar-default"  style="overflow-x: auto;white-space: nowrap;">
                 <div class="navbar-header">
                     <a href="<?php echo $this->Url->build('/'); ?>" class="navbar-brand"><b>Agil</b>Sistemas</a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">

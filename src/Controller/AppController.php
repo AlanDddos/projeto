@@ -51,8 +51,8 @@ class AppController extends Controller
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
     }
-	public function beforeRender(Event $event)
-{
-    $this->viewBuilder()->setTheme('AdminLTE');
-}
+    public function beforeRender(Event $event)
+    {
+        $this->viewBuilder()->setTheme('AdminLTE');
+    }
 }

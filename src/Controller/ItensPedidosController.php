@@ -107,12 +107,8 @@ class ItensPedidosController extends AppController
             'contain' => ['Pedidos']
         ]);
 
-
-
-        //debug($itensPedido);
-        //exit();
         if ($this->ItensPedidos->delete($itensPedido)) {
-            $itenssoma = $this->ItensPedidos->find()->where(['pedido_id'=>$itensPedido->pedido_id]);
+            $itenssoma = $this->ItensPedidos->find()->where(['pedido_id' => $itensPedido->pedido_id]);
             $itenssoma = $itenssoma->sumOf('totali');
 
             $pedido = $itensPedido->pedido;
@@ -125,6 +121,6 @@ class ItensPedidosController extends AppController
             $this->Flash->error(__('The itens pedido could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['controller'=>'Pedidos', 'action' => 'edit', $itensPedido->pedido_id]);
+        return $this->redirect(['controller' => 'Pedidos', 'action' => 'edit', $itensPedido->pedido_id]);
     }
 }
