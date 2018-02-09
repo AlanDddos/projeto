@@ -51,6 +51,14 @@ class AppController extends Controller
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
     }
+    /**
+     * Initialization hook method.
+     *
+     * @param string|AdminLTE $event Event $event.
+     * e.g. `$this->viewBuilder()->setTheme();`
+     *
+     * @return void
+     */
     public function beforeRender(Event $event)
     {
         $this->viewBuilder()->setTheme('AdminLTE');
