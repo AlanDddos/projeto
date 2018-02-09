@@ -10,7 +10,7 @@
 
     <?= $this->Form->create($pedido,['class'=>'form']) ?>
     <fieldset>
-        <legend><?= __('Pedido '.$pedido->id.' em edição') ?><nav class="navbar navbar-default">
+        <legend><?= __('Pedido '.$pedido->id.' em edição') ?><nav class="navbar navbar-default"  style="overflow-x: auto;white-space: nowrap;">
                 <div class="navbar-header">
                     <a href="<?php echo $this->Url->build('/'); ?>" class="navbar-brand"><b>Agil</b>Sistemas</a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -34,30 +34,10 @@
         <div class="row">
             <div class="form-inline">
             <div class="text-right">
-                <div class="col-xs-6 col-md-12">
-                    <?php //echo $this->Form->control('data', ['class'=>"form-control"]);?>
+                <div class="col-xs-12 col-md-12">
+                    <?php echo $this->Form->control('data', ['class'=>"form-control"]);?>
 
-                    <?php
-                    echo $this->Form->dateTime('data', [
-                    'month' => [
-                    'class' => 'form-control',
-                    'data-type' => 'month',
-                    ],
-                        'year' => [
-                            'class' => 'form-control',
-                        ],
-                        'day' => [
-                            'class' => 'form-control',
-                        ],
-                        'hour' => [
-                            'class' => 'form-control',
-                        ],
-                        'minute' => [
-                            'class' => 'form-control',
-                        ],
-                    ]);
-                    ?>
-                </div>
+                    </div>
             </div>
             </div>
         </div>
@@ -65,20 +45,20 @@
             <div class="col-xs-12 col-md-8">
                 <?php echo $this->Form->control('cliente_id', ['class'=>"form-control"], ['options' => $clientes]);?>
             </div>
-            <div class="col-xs-6 col-md-4">
+            <div class="col-xs-12 col-md-4">
                 <?php echo $this->Form->control('total', ['class'=>"form-control"]);?>
             </div>
         </div>
         <hr>
         <div class="row">
 
-            <div class="col-xs-2 col-md-6">
+            <div class="col-md-6">
                 <?php echo $this->Form->control('itens_pedidos.0.produto_id',['class'=>'form-control'], ['options' => $produtos]);?>
             </div>
-            <div class="col-xs-2 col-md-3">
+            <div class="col-xs-6 col-md-3">
                 <?php echo $this->Form->control('itens_pedidos.0.quantidade',['class'=>'form-control']);?>
             </div>
-            <div class="col-xs-2 col-md-3">
+            <div class="col-xs-6 col-md-3">
                 <?php echo $this->Form->control('itens_pedidos.0.valor',['class'=>'form-control']);?>
             </div>
         </div>
@@ -93,11 +73,11 @@
     <?= $this->Form->end() ?>
 </div>
 </div>
-<div class="box">
+<div class="box col-xs-6 col-md-3">
 <div class="produtos index large-9 medium-8 columns content">
     <h3><?= __('Produtos') ?></h3>
-    <table cellpadding="0" cellspacing="0" class="table table-hover">
-        <thead>
+    <table cellpadding="0" cellspacing="0" class="table table-hover  class="col-xs-2 col-md-3"">
+        <thead >
         <tr>
             <th scope="col"><?= $this->Paginator->sort('id') ?></th>
             <th scope="col"><?= $this->Paginator->sort('codigo') ?></th>

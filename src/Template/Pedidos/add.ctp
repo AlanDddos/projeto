@@ -33,7 +33,7 @@
         <div class="row">
             <div class="form-inline">
             <div class="text-right">
-                <div class="col-xs-6 col-md-12">
+                <div class="col-xs-12 col-md-12">
                     <?php echo $this->Form->control('data',['data-inputmask='=>'\'alias\': \'dd/mm/yyyy\''], ['class'=>"form-control"]); ?>
                 </div>
             </div>
@@ -43,20 +43,17 @@
             <div class="col-xs-12 col-md-8">
                 <?php echo $this->Form->control('cliente_id', ['class'=>"form-control"], ['options' => $clientes]);?>
             </div>
-            <div class="col-xs-6 col-md-4">
-                <?php echo $this->Form->control('total', ['class'=>"form-control"]);?>
             </div>
-        </div>
         <hr>
         <div class="row">
 
-            <div class="col-xs-2 col-md-6">
+            <div class="col-md-6">
                 <?php echo $this->Form->control('itens_pedidos.0.produto_id',['class'=>'form-control'], ['options' => $produtos]);?>
             </div>
-            <div class="col-xs-2 col-md-3">
+            <div class="col-xs-6 col-md-3">
                 <?php echo $this->Form->control('itens_pedidos.0.quantidade',['class'=>'form-control']);?>
             </div>
-            <div class="col-xs-2 col-md-3">
+            <div class="col-xs-6 col-md-3">
                 <?php echo $this->Form->control('itens_pedidos.0.valor',['class'=>'form-control']);?>
             </div>
         </div>
