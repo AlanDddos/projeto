@@ -10,7 +10,7 @@
 
     <?= $this->Form->create($pedido,['class'=>'form']) ?>
     <fieldset>
-        <legend><?= __('Pedido '.$pedido->id.' em edição') ?><nav class="navbar navbar-default"  style="overflow-x: auto;white-space: nowrap;">
+        <legend><?= __('Pedido: '.$pedido->id.'') ?><nav class="navbar navbar-default"  style="overflow-x: auto;white-space: nowrap;">
                 <div class="navbar-header">
                     <a href="<?php echo $this->Url->build('/'); ?>" class="navbar-brand"><b>Agil</b>Sistemas</a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -73,11 +73,8 @@
     <?= $this->Form->end() ?>
 </div>
 </div>
-<div class="box col-xs-6 col-md-3">
-<div class="produtos index large-9 medium-8 columns content">
-    <h3><?= __('Produtos') ?></h3>
-    <table cellpadding="0" cellspacing="0" class="table table-hover  class="col-xs-2 col-md-3"">
-        <thead >
+    <table cellpadding="0" cellspacing="0" class="box table table-hover col-xs-2 col-md-3" style="overflow-x: auto;white-space: nowrap;">
+        <thead style="overflow-x:auto">
         <tr>
             <th scope="col"><?= $this->Paginator->sort('id') ?></th>
             <th scope="col"><?= $this->Paginator->sort('codigo') ?></th>
@@ -115,6 +112,6 @@
         </tbody>
     </table>
 
-</div>
-</div>
+
+
 </div>
