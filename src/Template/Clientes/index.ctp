@@ -37,7 +37,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $cliente->id],['class'=>"label label-warning"]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $cliente->id],['class'=>"label label-primary"]) ?>
-                    <?= $this->Form->postLink(__('Excluir'), ['action' => 'delete', $cliente->id],['class'=>"label label-danger"], ['confirm' => __('Are you sure you want to delete # {0}?', $cliente->id)]) ?>
+                    <?= $this->Form->postLink(__('Excluir'), ['action' => 'delete', $cliente->id],['class'=>"label label-danger", 'confirm' => __('Are you sure you want to delete # {0}?', $cliente->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

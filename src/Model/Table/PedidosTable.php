@@ -40,13 +40,13 @@ class PedidosTable extends Table
         $this->belongsTo('Clientes', [
             'foreignKey' => 'cliente_id',
             'joinType' => 'INNER',
-            'update'=>'CASCADE',
-            'delete'=>'CASCADE'
+            'update' => 'CASCADE',
+            'delete' => 'CASCADE'
         ]);
         $this->hasMany('ItensPedidos', [
             'foreignKey' => 'pedido_id',
-            'update'=>'CASCADE',
-            'delete'=>'CASCADE'
+            'update' => 'CASCADE',
+            'delete' => 'CASCADE'
         ]);
     }
 

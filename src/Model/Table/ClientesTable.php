@@ -38,8 +38,8 @@ class ClientesTable extends Table
 
         $this->hasMany('Pedidos', [
             'foreignKey' => 'cliente_id',
-            'update'=>'CASCADE',
-            'delete'=>'CASCADE'
+            'update' => 'CASCADE',
+            'delete' => 'CASCADE'
         ]);
     }
 

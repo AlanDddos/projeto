@@ -40,14 +40,14 @@ class ItensPedidosTable extends Table
         $this->belongsTo('Pedidos', [
             'foreignKey' => 'pedido_id',
             'joinType' => 'INNER',
-            'update'=>'CASCADE',
-            'delete'=>'CASCADE'
+            'update' => 'CASCADE',
+            'delete' => 'CASCADE'
         ]);
         $this->belongsTo('Produtos', [
             'foreignKey' => 'produto_id',
             'joinType' => 'INNER',
-            'update'=>'CASCADE',
-            'delete'=>'CASCADE'
+            'update' => 'CASCADE',
+            'delete' => 'CASCADE'
         ]);
     }
 

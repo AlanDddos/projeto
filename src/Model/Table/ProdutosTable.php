@@ -38,8 +38,8 @@ class ProdutosTable extends Table
 
         $this->hasMany('ItensPedidos', [
             'foreignKey' => 'produto_id',
-            'update'=>'CASCADE',
-            'delete'=>'CASCADE'
+            'update' => 'CASCADE',
+            'delete' => 'CASCADE'
         ]);
     }
 
