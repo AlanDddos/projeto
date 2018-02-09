@@ -41,7 +41,7 @@ class ItensPedidosFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'pedido_id' => 1000,
+            'pedido_id' => 1,
             'produto_id' => 1,
             'valor' => 1,
             'quantidade' => 1.5,

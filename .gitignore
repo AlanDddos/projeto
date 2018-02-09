@@ -9,6 +9,7 @@
 .github/
 .gitignore
 .travis.yml
+/vendor/*
 
 # OS generated files #
 ######################

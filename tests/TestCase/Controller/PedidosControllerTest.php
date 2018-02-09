@@ -29,7 +29,9 @@ class PedidosControllerTest extends IntegrationTestCase
      */
     public function testIndex()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/pedidos'); //busca os pedidos
+        $this->assertResponseOk(); //verifica se está com certo
     }
 
     /**
@@ -39,7 +41,10 @@ class PedidosControllerTest extends IntegrationTestCase
      */
     public function testView()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/pedidos/view/1'); //test controller view
+        $this->assertResponseOk(); //verifica se está com certo
+
     }
 
     /**
@@ -49,7 +54,10 @@ class PedidosControllerTest extends IntegrationTestCase
      */
     public function testAdd()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/pedidos/add/1'); //test controller add
+        $this->assertResponseOk(); //verifica se está com certo
+
     }
 
     /**
@@ -59,7 +67,10 @@ class PedidosControllerTest extends IntegrationTestCase
      */
     public function testEdit()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/pedidos/edit/1'); //test controller edit
+        $this->assertResponseOk(); //verifica se está com certo
+
     }
 
     /**
@@ -69,6 +80,9 @@ class PedidosControllerTest extends IntegrationTestCase
      */
     public function testDelete()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->delete('/pedidos/delete/1'); //test controller delete
+        $this->assertResponseSuccess(); //verifica se está com certo
+
     }
 }

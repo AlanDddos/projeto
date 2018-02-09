@@ -35,7 +35,7 @@ class PedidosFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => 1000,
+            'id' => 1,
             'cliente_id' => 1,
             'data' => 1517234518,
             'total' => 1

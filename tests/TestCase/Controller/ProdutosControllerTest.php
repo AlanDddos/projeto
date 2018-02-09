@@ -29,7 +29,9 @@ class ProdutosControllerTest extends IntegrationTestCase
      */
     public function testIndex()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/produtos'); //busca os produtos
+        $this->assertResponseOk(); //verifica se está com certo
     }
 
     /**
@@ -39,7 +41,10 @@ class ProdutosControllerTest extends IntegrationTestCase
      */
     public function testView()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/produtos/view/1'); //test controller view
+        $this->assertResponseOk(); //verifica se está com certo
+
     }
 
     /**
@@ -49,7 +54,10 @@ class ProdutosControllerTest extends IntegrationTestCase
      */
     public function testAdd()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/produtos/add/1'); //test controller add
+        $this->assertResponseOk(); //verifica se está com certo
+
     }
 
     /**
@@ -59,7 +67,10 @@ class ProdutosControllerTest extends IntegrationTestCase
      */
     public function testEdit()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/produtos/edit/1'); //test controller edit
+        $this->assertResponseOk(); //verifica se está com certo
+
     }
 
     /**
@@ -69,6 +80,9 @@ class ProdutosControllerTest extends IntegrationTestCase
      */
     public function testDelete()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->delete('/produtos/delete/1'); //test controller delete
+        $this->assertResponseSuccess(); //verifica se está com certo
+
     }
 }
