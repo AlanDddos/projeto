@@ -92,6 +92,17 @@ class ValidatingArrayLoader implements LoaderInterface
         $this->validateUrl('homepage');
         $this->validateFlatArray('keywords', '[\p{N}\p{L} ._-]+');
 
+        $releaseDate = null;
+        $this->validateString('time');
+        if (!empty($this->config['time'])) {
+            try {
+                $releaseDate = new \DateTime($this->config['time'], new \DateTimeZone('UTC'));
+            } catch (\Exception $e) {
+                $this->errors[] = 'time : invalid value ('.$this->config['time'].'): '.$e->getMessage();
+                unset($this->config['time']);
+            }
+        }
+
         if (isset($this->config['license'])) {
             if (is_string($this->config['license'])) {
                 $this->validateRegex('license', '[A-Za-z0-9+. ()-]+');
@@ -121,11 +132,16 @@ class ValidatingArrayLoader implements LoaderInterface
                         'If the software is closed-source, you may use "proprietary" as license.',
                         json_encode($this->config['license'])
                     );
-                } else {
+                } else if (!$releaseDate || $releaseDate->format('Y-m-d H:i:s') >= '2018-01-20 00:00:00') { // only warn for deprecations for releases/branches that follow the introduction of deprecated licenses
                     foreach ($licenses as $license) {
                         $spdxLicense = $licenseValidator->getLicenseByIdentifier($license);
                         if ($spdxLicense && $spdxLicense[3]) {
-                            if (preg_match('{^[AL]?GPL-[123](\.[01])?\+?$}i', $license)) {
+                            if (preg_match('{^[AL]?GPL-[123](\.[01])?\+$}i', $license)) {
+                                $this->warnings[] = sprintf(
+                                    'License "%s" is a deprecated SPDX license identifier, use "'.str_replace('+', '', $license).'-or-later" instead',
+                                    $license
+                                );
+                            } elseif (preg_match('{^[AL]?GPL-[123](\.[01])?$}i', $license)) {
                                 $this->warnings[] = sprintf(
                                     'License "%s" is a deprecated SPDX license identifier, use "'.$license.'-only" or "'.$license.'-or-later" instead',
                                     $license
@@ -139,16 +155,6 @@ class ValidatingArrayLoader implements LoaderInterface
                         }
                     }
                 }
-            }
-        }
-
-        $this->validateString('time');
-        if (!empty($this->config['time'])) {
-            try {
-                $date = new \DateTime($this->config['time'], new \DateTimeZone('UTC'));
-            } catch (\Exception $e) {
-                $this->errors[] = 'time : invalid value ('.$this->config['time'].'): '.$e->getMessage();
-                unset($this->config['time']);
             }
         }
 

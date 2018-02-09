@@ -50,7 +50,6 @@ class PedidosController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
     public function add($id = null)
-
     {
         $pedido = $this->Pedidos->newEntity();
         $ItemPedido = $this->Pedidos->ItensPedidos->newEntity();
@@ -70,7 +69,6 @@ class PedidosController extends AppController
             //debug($pedido);
            // exit();
             if ($this->Pedidos->save($pedido, ['associated' => 'ItensPedidos'])) {
-
                 $this->Flash->success(__('Produto salvo!'));
                 //var_dump($pedido);
                 //exit();
@@ -91,7 +89,7 @@ class PedidosController extends AppController
         //$produtos = $produtos->toArray(); //transforma a consulta que fiz no controller em array para extrair os dados
 
 
-        $this->set(compact('pedido', 'clientes', 'produtos','itensPedidos'));
+        $this->set(compact('pedido', 'clientes', 'produtos', 'itensPedidos'));
     }
 
     /**
@@ -114,7 +112,6 @@ class PedidosController extends AppController
                 $pedido->itens_pedidos[0]['quantidade'] *
                 $pedido->itens_pedidos[0]['valor'];
 
-
                 $pedido['total'] = $pedido['total'] + $pedido->itens_pedidos[0]['totali']; //tenho que somar os itens do pedido para salvar no pedido
 
             if ($this->Pedidos->save($pedido)) {
@@ -125,11 +122,10 @@ class PedidosController extends AppController
             $this->Flash->error(__('The pedido could not be saved. Please, try again.'));
         }
 
-
         $produtos = $this->Pedidos->ItensPedidos->Produtos->find('list', ['limit' => 200]);
 
         $clientes = $this->Pedidos->Clientes->find('list', ['limit' => 200]);
-        $this->set(compact('pedido', 'clientes', 'itenspedidos','produtos'));
+        $this->set(compact('pedido', 'clientes', 'itenspedidos', 'produtos'));
     }
 
     /**

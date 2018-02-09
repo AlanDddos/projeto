@@ -69,7 +69,7 @@
                 <?php echo $this->Form->control('total', ['class'=>"form-control"]);?>
             </div>
         </div>
-
+        <hr>
         <div class="row">
 
             <div class="col-xs-2 col-md-6">

@@ -28,7 +28,7 @@
                 <td><?= h($pedido->data) ?></td>
                 <td><?= $this->Number->format($pedido->total) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $pedido->id],['class'=>"label label-warning"]) ?>
+                    <?= $this->Html->link(__('Fechar'), ['action' => 'view', $pedido->id],['class'=>"label label-warning"]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $pedido->id],['class'=>"label label-primary"]) ?>
                     <?= $this->Form->postLink(__('Excluir'), ['action' => 'delete', $pedido->id],['class'=>"label label-danger"], ['confirm' => __('Are you sure you want to delete # {0}?', $pedido->id)]) ?>
                 </td>
