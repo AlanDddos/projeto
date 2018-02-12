@@ -22,7 +22,7 @@ class ProdutosFixture extends TestFixture
         'descricao' => ['type' => 'string', 'length' => 255, 'default' => null, 'null' => false, 'collate' => null, 'comment' => null, 'precision' => null, 'fixed' => null],
         'preco' => ['type' => 'decimal', 'length' => 12, 'default' => null, 'null' => false, 'comment' => null, 'precision' => 2, 'unsigned' => null],
         '_constraints' => [
-            'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
+            'primary'   => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
     ];
     // @codingStandardsIgnoreEnd

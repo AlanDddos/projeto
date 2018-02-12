@@ -61,7 +61,21 @@ class PedidosTableTest extends TestCase
      */
     public function testInitialize()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->Pedidos->initialize([]); // Have to call manually to get coverage.
+        $this->assertEquals(
+            'id',
+            $this->Pedidos->primaryKey(),
+            'The [App]Table default primary key is expected to be `id`.'
+        );
+        $expectedAssociations = [
+            'Clientes'
+        ];
+        foreach ($expectedAssociations as $assoc) {
+            $this->assertTrue(
+                $this->Pedidos->associations()->has($assoc),
+                "Cursory sanity check. The [ItensPedidos]Table table is expected to be associated with $assoc."
+            );
+        }
     }
 
     /**
@@ -71,7 +85,21 @@ class PedidosTableTest extends TestCase
      */
     public function testValidationDefault()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->Pedidos->initialize([]); // Have to call manually to get coverage.
+        $this->assertEquals(
+            'id',
+            $this->Pedidos->primaryKey(),
+            'The [App]Table default primary key is expected to be `id`.'
+        );
+        $expectedAssociations = [
+            'Clientes'
+        ];
+        foreach ($expectedAssociations as $assoc) {
+            $this->assertTrue(
+                $this->Pedidos->associations()->has($assoc),
+                "Cursory sanity check. The [ItensPedidos]Table table is expected to be associated with $assoc."
+            );
+        }
     }
 
     /**
@@ -81,6 +109,7 @@ class PedidosTableTest extends TestCase
      */
     public function testBuildRules()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $pedidos = $this->Pedidos->newEntity();
+        $this->assertEmpty($pedidos->errors()); // empty = no validation errors
     }
 }

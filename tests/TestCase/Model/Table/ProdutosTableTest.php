@@ -61,7 +61,21 @@ class ProdutosTableTest extends TestCase
      */
     public function testInitialize()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->Produtos->initialize([]); // Have to call manually to get coverage.
+        $this->assertEquals(
+            'id',
+            $this->Produtos->getPrimaryKey(),
+            'The [App]Table default primary key is expected to be `id`.'
+        );
+        $expectedAssociations = [
+            'ItensPedidos'
+        ];
+        foreach ($expectedAssociations as $assoc) {
+            $this->assertTrue(
+                $this->Produtos->associations()->has($assoc),
+                "Cursory sanity check. The [ItensPedidos]Table table is expected to be associated with $assoc."
+            );
+        }
     }
 
     /**
@@ -71,6 +85,7 @@ class ProdutosTableTest extends TestCase
      */
     public function testValidationDefault()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $produto = $this->Produtos->newEntity();
+        $this->assertEmpty($produto->errors()); // empty = no validation errors
     }
 }

@@ -29,7 +29,7 @@ class UsersController extends AppController
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
             }
-            $this->Flash->error(__('Invalid username or password, try again'));
+            $this->Flash->error(__('Usuário ou senha inválido!'));
         }
     }
 
@@ -88,7 +88,7 @@ class UsersController extends AppController
                 }
 
             }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            $this->Flash->error(__('O usuário não pode ser salvo tente novamente.'));
         }
         $logged = $this->Auth->user();
         $this->set(compact('user', 'logged'));
