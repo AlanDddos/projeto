@@ -35,6 +35,19 @@ class PagesControllerTest extends IntegrationTestCase
      */
     public function testMultipleGet()
     {
+        $this->session([
+            'Auth' => [
+                'User' => [
+                    'id' => 1,
+                    'email'=>'test@test.com',
+                    'password'=>'123456',
+                    'role'=>'1',
+                    'locale'=>'1',
+                    'username' => 'testing',
+                    // other keys.
+                ]
+            ]
+        ]);
         $this->get('/');
         $this->assertResponseOk();
         $this->get('/');
@@ -48,6 +61,19 @@ class PagesControllerTest extends IntegrationTestCase
      */
     public function testDisplay()
     {
+        $this->session([
+            'Auth' => [
+                'User' => [
+                    'id' => 1,
+                    'email'=>'test@test.com',
+                    'password'=>'123456',
+                    'role'=>'1',
+                    'locale'=>'1',
+                    'username' => 'testing',
+                    // other keys.
+                ]
+            ]
+        ]);
         $this->get('/pages/home');
         $this->assertResponseOk();
         $this->assertResponseContains('AdminLTE');
@@ -61,6 +87,19 @@ class PagesControllerTest extends IntegrationTestCase
      */
     public function testMissingTemplate()
     {
+        $this->session([
+            'Auth' => [
+                'User' => [
+                    'id' => 1,
+                    'email'=>'test@test.com',
+                    'password'=>'123456',
+                    'role'=>'1',
+                    'locale'=>'1',
+                    'username' => 'testing',
+                    // other keys.
+                ]
+            ]
+        ]);
         Configure::write('debug', false);
         $this->get('/pages/not_existing');
 
@@ -75,6 +114,19 @@ class PagesControllerTest extends IntegrationTestCase
      */
     public function testMissingTemplateInDebug()
     {
+        $this->session([
+            'Auth' => [
+                'User' => [
+                    'id' => 1,
+                    'email'=>'test@test.com',
+                    'password'=>'123456',
+                    'role'=>'1',
+                    'locale'=>'1',
+                    'username' => 'testing',
+                    // other keys.
+                ]
+            ]
+        ]);
         Configure::write('debug', true);
         $this->get('/pages/not_existing');
 
@@ -91,6 +143,19 @@ class PagesControllerTest extends IntegrationTestCase
      */
     public function testDirectoryTraversalProtection()
     {
+        $this->session([
+            'Auth' => [
+                'User' => [
+                    'id' => 1,
+                    'email'=>'test@test.com',
+                    'password'=>'123456',
+                    'role'=>'1',
+                    'locale'=>'1',
+                    'username' => 'testing',
+                    // other keys.
+                ]
+            ]
+        ]);
         $this->get('/pages/../Layout/ajax');
         $this->assertResponseCode(403);
         $this->assertResponseContains('Forbidden');

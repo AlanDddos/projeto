@@ -48,6 +48,8 @@ return array(
     'Cake\\' => array($vendorDir . '/cakephp/cakephp/src'),
     'CakePHP\\' => array($vendorDir . '/cakephp/cakephp-codesniffer/CakePHP'),
     'Bake\\' => array($vendorDir . '/cakephp/bake/src'),
+    'Auth\\Test\\' => array($baseDir . '/plugins/Auth/tests'),
+    'Auth\\' => array($baseDir . '/plugins/Auth/src'),
     'Aura\\Intl\\' => array($vendorDir . '/aura/intl/src'),
     'App\\Test\\' => array($baseDir . '/tests'),
     'App\\' => array($baseDir . '/src'),

@@ -215,3 +215,5 @@ if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 	Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
 }
+
+Plugin::load('Auth', ['bootstrap' => false, 'routes' => true]);

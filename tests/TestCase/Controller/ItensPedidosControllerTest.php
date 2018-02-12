@@ -29,7 +29,22 @@ class ItensPedidosControllerTest extends IntegrationTestCase
      */
     public function testIndex()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->session([
+            'Auth' => [
+                'User' => [
+                    'id' => 1,
+                    'email'=>'test@test.com',
+                    'password'=>'123456',
+                    'role'=>'1',
+                    'locale'=>'1',
+                    'username' => 'testing',
+                    // other keys.
+                ]
+            ]
+        ]);
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/itens-pedidos'); //busca os pedidos
+        $this->assertResponseOk(); //verifica se está com certo
     }
 
     /**
@@ -39,7 +54,23 @@ class ItensPedidosControllerTest extends IntegrationTestCase
      */
     public function testView()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->session([
+            'Auth' => [
+                'User' => [
+                    'id' => 1,
+                    'email'=>'test@test.com',
+                    'password'=>'123456',
+                    'role'=>'1',
+                    'locale'=>'1',
+                    'username' => 'testing',
+                    // other keys.
+                ]
+            ]
+        ]);
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/itens-pedidos/view/1'); //test controller view
+        $this->assertResponseOk(); //verifica se está com certo
+
     }
 
     /**
@@ -49,7 +80,23 @@ class ItensPedidosControllerTest extends IntegrationTestCase
      */
     public function testAdd()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->session([
+            'Auth' => [
+                'User' => [
+                    'id' => 1,
+                    'email'=>'test@test.com',
+                    'password'=>'123456',
+                    'role'=>'1',
+                    'locale'=>'1',
+                    'username' => 'testing',
+                    // other keys.
+                ]
+            ]
+        ]);
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/itens-pedidos/add/1'); //test controller add
+        $this->assertResponseOk(); //verifica se está com certo
+
     }
 
     /**
@@ -59,7 +106,23 @@ class ItensPedidosControllerTest extends IntegrationTestCase
      */
     public function testEdit()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->session([
+            'Auth' => [
+                'User' => [
+                    'id' => 1,
+                    'email'=>'test@test.com',
+                    'password'=>'123456',
+                    'role'=>'1',
+                    'locale'=>'1',
+                    'username' => 'testing',
+                    // other keys.
+                ]
+            ]
+        ]);
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->get('/itens-pedidos/edit/1'); //test controller edit
+        $this->assertResponseOk(); //verifica se está com certo
+
     }
 
     /**
@@ -69,6 +132,22 @@ class ItensPedidosControllerTest extends IntegrationTestCase
      */
     public function testDelete()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->session([
+            'Auth' => [
+                'User' => [
+                    'id' => 1,
+                    'email'=>'test@test.com',
+                    'password'=>'123456',
+                    'role'=>'1',
+                    'locale'=>'1',
+                    'username' => 'testing',
+                    // other keys.
+                ]
+            ]
+        ]);
+        //$this->markTestIncomplete('Not implemented yet.');
+        $this->delete('/itens-pedidos/delete/1'); //test controller delete
+        $this->assertResponseSuccess(); //verifica se está com certo
+
     }
 }

@@ -18,6 +18,8 @@ class ItensPedidosTableTest extends TestCase
      */
     public $ItensPedidos;
 
+
+
     /**
      * Fixtures
      *
@@ -62,18 +64,36 @@ class ItensPedidosTableTest extends TestCase
      */
     public function testInitialize()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->ItensPedidos->initialize([]); // Have to call manually to get coverage.
+        $this->assertEquals(
+            'id',
+            $this->ItensPedidos->primaryKey(),
+            'The [App]Table default primary key is expected to be `id`.'
+        );
+        $expectedAssociations = [
+            'Pedidos'
+        ];
+        foreach ($expectedAssociations as $assoc) {
+            $this->assertTrue(
+                $this->ItensPedidos->associations()->has($assoc),
+                "Cursory sanity check. The [ItensPedidos]Table table is expected to be associated with $assoc."
+            );
+        }
     }
 
-    /**
-     * Test validationDefault method
-     *
-     * @return void
-     */
-    public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
+
+
+        /**
+         * Test validationDefault method
+         *
+         * @return void
+         */
+        public
+        function testValidationDefault()
+        {
+            $this->markTestIncomplete('Not implemented yet.');
+        }
+
 
     /**
      * Test buildRules method
@@ -82,6 +102,7 @@ class ItensPedidosTableTest extends TestCase
      */
     public function testBuildRules()
     {
+
         $this->markTestIncomplete('Not implemented yet.');
     }
 }
