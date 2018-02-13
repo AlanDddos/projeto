@@ -55,6 +55,8 @@ class Initial extends AbstractMigration
                 'default' => null,
                 'limit' => null,
                 'null' => false,
+                'precision' => 10,
+                'scale' => 2,
             ])
             ->addColumn('quantidade', 'decimal', [
                 'default' => null,
@@ -66,13 +68,15 @@ class Initial extends AbstractMigration
                 'default' => null,
                 'limit' => null,
                 'null' => true,
+                'precision' => 10,
+                'scale' => 2,
             ])
             ->addColumn('descricao', 'string', [
                 'default' => null,
                 'limit' => 255,
                 'null' => true,
             ])
-            ->addColumn('preco', 'decimal', [
+            ->addColumn('preco', 'float', [
                 'default' => null,
                 'null' => true,
                 'precision' => 12,
@@ -150,12 +154,37 @@ class Initial extends AbstractMigration
                 'default' => null,
                 'limit' => null,
                 'null' => true,
+                'precision' => 10,
+                'scale' => 2,
             ])
             ->addIndex(
                 [
                     'cliente_id',
                 ]
             )
+            ->create();
+        $this->table('users')
+            ->addColumn('email', 'string', [
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+            ])
+            ->addColumn('password', 'string', [
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+            ])
+            ->addColumn('role', 'string', [
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+            ])
+            ->addColumn('locale', 'string', [
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+            ])
+
             ->create();
 
         $this->table('produtos')
@@ -169,7 +198,7 @@ class Initial extends AbstractMigration
                 'limit' => 255,
                 'null' => false,
             ])
-            ->addColumn('preco', 'decimal', [
+            ->addColumn('preco', 'float', [
                 'default' => null,
                 'null' => false,
                 'precision' => 12,
@@ -265,5 +294,6 @@ class Initial extends AbstractMigration
         $this->dropTable('pedidos');
         $this->dropTable('produtos');
         $this->dropTable('requests');
+        $this->dropTable('users');
     }
 }
