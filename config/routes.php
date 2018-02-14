@@ -43,6 +43,8 @@ use Cake\Routing\Route\DashedRoute;
  */
 Router::defaultRouteClass(DashedRoute::class);
 
+
+
 Router::scope('/', function (RouteBuilder $routes) {
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
@@ -79,4 +81,14 @@ Router::scope('/', function (RouteBuilder $routes) {
  * Load all plugin routes. See the Plugin documentation on
  * how to customize the loading of plugin routes.
  */
+Router::prefix('api/v1', function (RouteBuilder $routes) {
+    $routes->setExtensions(['json'],['xml']);
+    $routes->resources('Clientes');
+    $routes->resources('Produtos');
+    $routes->resources('Pedidos');
+    $routes->resources('Users');
+    Router::connect('/api/v1/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api/v1']);
+    Router::connect('/api/v1/users/token', ['controller' => 'Users', 'action' => 'token', 'prefix' => 'api/v1']);
+    $routes->fallbacks(DashedRoute::class);
+});
 Plugin::routes();

@@ -357,7 +357,7 @@ AdminLTE/
       <span class="eg">Main Header Example</span>
       <header class="main-header" style="position: relative;">
         <!-- Logo -->
-        <a href="<?php echo $this->Url->build('/'); ?>" class="logo" style="position: relative;"><b>Admin</b>LTE</a>
+        <a href="<?php echo $this->Url->build('/'); ?>" class="logo" style="position: relative;"><b>Agil</b>LTE</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar" role="navigation" style="border: 0;max-height: 50px;">
           <!-- Sidebar toggle button-->
@@ -638,7 +638,7 @@ AdminLTE/
         <nav class="navbar navbar-static-top">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a href="<?php echo $this->Url->build('/'); ?>" class="navbar-brand"><b>Admin</b>LTE</a>
+              <a href="<?php echo $this->Url->build('/'); ?>" class="navbar-brand"><b>Agil</b>LTE</a>
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                 <i class="fa fa-bars"></i>
               </button>
